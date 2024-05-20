@@ -1,0 +1,444 @@
+/*Importamos el archivo de las fuentes CSS para poder utilizarlas en nuestro proyecto solo con la propiedad font-family: ...*/
+
+@import url('fonts.css');
+
+
+:root{
+    --color1:#0307ff;
+    --color2:#000;
+    --color3:#000000b8;
+    --color4:#fff;
+    --color5:#0dcaf0;
+    --color6:#ff0000;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/*dar color a body y cambiar fuente*/
+body{
+    background-color: var(--color1);
+    color: var(--color4);
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+/*cambiar color navbar*/
+.navbar {
+    background-color: var(--color2) !important;
+  }
+
+
+/*cambiar color a texto de navbar*/
+.navbar-brand,.navbar-nav .nav-link {
+    color: var(--color4) !important; 
+}
+.navbar-toggler-icon {
+    filter: invert(1);
+    
+  }
+
+#imgportafolio{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+/*configuracion de container1*/  
+#cont1{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.cont {
+    background-color: var(--color3); 
+    color: #fff; 
+    padding: 20px; 
+    border-radius: 10px; 
+    margin-bottom: 20px; 
+  }
+
+.textoAnimado{
+    color: var(--color4);
+    font-weight: 700;
+    text-transform: uppercase;
+    background-image: linear-gradient(-250deg, #000 0%, #fff 50%, #0307ff 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    -webkit-text-fill-color: transparent ;
+    -webkit-background-clip: text;
+    animation: bgText 5s linear infinite;
+}
+@keyframes bgText{
+    to{
+        background-position: 200% center;
+    }
+}
+
+
+
+
+
+
+
+
+
+/*configuracion de container 2 slide*/
+.carousel-item img {
+    height: auto;
+}
+
+.slide-content {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Asegura que el contenido esté por encima del overlay */
+  color: white;
+  text-align: center;
+}
+
+.texto-slider {
+  position: absolute; /* Establece la posición absoluta para el texto */
+  top: 90%; /* Ajusta la posición vertical del texto */
+  left: 50%; /* Ajusta la posición horizontal del texto */
+  transform: translate(-50%, -50%); /* Centra el texto vertical y horizontalmente */
+  text-align: center; /* Alinea el texto al centro */
+  color: white; /* Color del texto */
+  z-index: 2; /* Asegura que el texto esté por encima de la imagen del slider */
+  
+}
+
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .slide-content {
+        font-size: 4px;
+        position: absolute;
+        top: 10%;
+        left: 18%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        color: white;
+        text-align: center;
+      }
+    .sobreMiText{
+        font-size: 23px;
+    }  
+  }
+
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .slide-content {
+        font-size: 4px;
+        position: absolute;
+        top: 10%;
+        left: 23%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        color: white;
+        text-align: center;
+      }
+    .sobreMiText{
+        font-size: 18px;
+    }  
+    .texto-slider{
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 375px) and (max-width: 424px) {
+    .slide-content {
+        font-size: 4px;
+        position: absolute;
+        top: 10%;
+        left: 23%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        color: white;
+        text-align: center;
+      }
+    .sobreMiText{
+        font-size: 15px;
+    }  
+    .texto-slider{
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 374px) {
+    .slide-content {
+        font-size: 4px;
+        position: absolute;
+        top: 12%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        color: white;
+        text-align: center;
+      }
+    .sobreMiText{
+        font-size: 15px;
+    }
+    .texto-slider{
+      display: none;
+    }  
+  }
+  
+  
+
+
+
+
+
+
+
+/*configuracion del container 3*/
+#cont3{
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos alrededor */
+    align-items: center; 
+    color: var(--color4);
+    background: linear-gradient(45deg,#000000,#262626);  
+    background-size: 400% 400%;
+    position: relative;
+    animation: mover 10s ease-in-out infinite; 
+}  
+@keyframes mover{
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+}
+
+.textIzquierda{
+    flex: 1; 
+    writing-mode: vertical-lr; 
+    text-orientation: upright; 
+    letter-spacing: 20px;
+    width: auto;
+    height: 320px;
+    padding: 10px;
+    margin-left: 30px;
+}
+.centro {
+    flex: 1;
+    
+  }
+.textDerecha{
+    flex: 1; 
+    text-align: right;
+    writing-mode: vertical-rl; 
+    text-orientation: upright; 
+    white-space: nowrap;
+    margin-right: 30px;
+}  
+
+.imgProyecto{
+  width: 300px;
+  height: 300px;
+  border-radius: 70px;
+  
+}
+
+.contProyecto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contimg{
+  text-align: center;
+  position: relative;
+  margin: 0 10px;
+}
+
+.contProyecto .imgProyecto{
+  filter: saturate(30%);
+  width: 30%;
+  height: 20%;
+  object-fit: cover;
+  transition: all ease 0.4s;
+  cursor: pointer;
+  .texto{
+    display: block;
+  }
+}
+.contProyecto .imgProyecto:hover{
+  filter: saturate(100%);
+  width: 50%;
+  height: 50%;
+  border-radius: 110px;
+}
+.imgSinTexto{
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .imgConTexto{
+    display: none;
+  }
+  .imgSinTexto{
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+/*configuracion container4*/
+#cont4 {
+  display: flex;
+  justify-content: center;
+}
+
+.contact {
+  width: 100%;
+  height: 60px;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  height: 100%;
+  background: none;
+  padding-top: 20px;
+  border: none;
+  outline: 0px;
+  color: var(--color4);
+}
+
+.contact .lbl-nombre {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid var(--color4);
+}
+
+.contact .lbl-nombre:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid var(--color5);
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+
+.text-nomb {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all 0.3s ease;
+  color: var(--color4);
+}
+
+.contact input:focus + .lbl-nombre .text-nomb,
+.contact input:not(:placeholder-shown) + .lbl-nombre .text-nomb,
+.contact textarea:focus + .lbl-nombre,
+.contact textarea:not(:placeholder-shown) + .lbl-nombre {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: var(--color5);
+}
+
+.contact input:focus + .lbl-nombre:after,
+.contact textarea:focus + .lbl-nombre:after {
+  transform: translateX(0);
+}
+
+.contact2 .lbl-nombre{
+  color: var(--color5);
+}
+
+.contact2 textarea{
+  width: 350px;
+  height: 100px;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 0 15px;
+  border: 2px solid var(--color4);
+  background: transparent;
+  color: var(--color4);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.contact2 textarea:focus {
+  border-color: var(--color5);
+}
+
+
+
+#campovacio{
+  font-size: 12px;
+  margin: 0;
+  position: absolute;
+  color: var(--color6);
+  transition: 0,3s ease;
+}
+#campovacioEmail{
+  font-size: 12px;
+  margin: 0;
+  position: absolute;
+  color: var(--color6);
+  transition: 0,3s ease;
+}
+#campovacioAsunto{
+  font-size: 12px;
+  margin: 0;
+  position: absolute;
+  color: var(--color6);
+  transition: 0,3s ease;
+}
+
+#enviado{
+  display: none;
+}
+
+
+
+
+
+
+/*footer*/
+footer {
+  background-color: var(--color2);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  bottom: 0;
+  width: 100%;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
